@@ -7,11 +7,11 @@ require "phantom_renderer/version"
 Gem::Specification.new do |s|
   s.name        = "phantom_renderer"
   s.version     = PhantomRenderer::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of PhantomRenderer."
-  s.description = "TODO: Description of PhantomRenderer."
+  s.authors     = ["Erez Rabih"]
+  s.email       = ["erez.rabih@gmail.com"]
+  s.homepage    = "https://github.com/FTBpro/phantom_renderer"
+  s.summary     = "A Ruby on Rails Phantom-Server agent."
+  s.description = "A Ruby on Rails Phantom-Server agent."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 

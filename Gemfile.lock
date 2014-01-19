@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     phantom_renderer (0.0.1)
-      rails (~> 3.2.16)
+      rails (~> 3.2.0)
 
 GEM
   remote: https://rubygems.org/

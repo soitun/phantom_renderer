@@ -1,0 +1,34 @@
+defaults: &defaults
+  server_ip: 127.0.0.1
+  server_port: 80
+  render_timeout: 5
+  request_by_phantom_header: X-Phantom
+  request_backend_header: X-Backend-Host
+  unicorn_port: 8001
+
+
+development: &development
+  <<: *defaults
+  server_ip: localhost
+  server_port: 8002
+  render_timeout: 20
+
+test:
+  <<: *development
+
+testo:
+  <<: *defaults
+
+utest:
+  <<: *defaults
+
+qa1: 
+  <<: *defaults
+
+qa2:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  server_ip: 127.0.0.1
+

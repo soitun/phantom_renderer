@@ -1,4 +1,4 @@
 = PhantomRenderer
-![Build Status](https://travis-ci.org/FTBpro/phantom_renderer.png?branch=master)](https://travis-ci.org/FTBpro/phantom_renderer)
+![Build Status](https://travis-ci.org/FTBpro/phantom_renderer.png?branch=master)
 
 This project rocks and uses MIT-LICENSE.

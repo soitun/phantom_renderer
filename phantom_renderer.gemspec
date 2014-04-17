@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "A Ruby on Rails Phantom-Server agent."
   s.description = "A Ruby on Rails Phantom-Server agent."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile"]
 
   s.add_dependency "rails", "~> 3.2.0"
 

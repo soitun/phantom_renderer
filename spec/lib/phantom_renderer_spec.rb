@@ -32,9 +32,9 @@ describe PhantomRenderer, type: :controller do
   end
 
   before do
-    ApplicationController.any_instance.stub :produce_single_page_header_and_footer_data
     Rails.cache.clear
-    res = double body: PHANTOM_RESPONSE
+    res = double(Net::HTTPResponse)
+    res.stub body: PHANTOM_RESPONSE, code: 200
     Net::HTTP.stub start: res
   end
 
@@ -161,6 +161,32 @@ describe PhantomRenderer, type: :controller do
         it {should be_success}
         its(:body) {should eq UNICORN_RESPONSE }
       end
+    end
+    
+    describe "Bad HTTP response handling" do
+      before do
+        res = double(Net::HTTPResponse)
+        res.stub body: PHANTOM_RESPONSE, code: 502
+        Net::HTTP.stub start: res
+        get :index
+      end
+
+      subject {response}
+      it {should be_success}
+      its(:body) {should eq UNICORN_RESPONSE}
+    end
+
+    describe "Good HTTP response" do
+      before do
+        res = double(Net::HTTPResponse)
+        res.stub body: PHANTOM_RESPONSE, code: 200
+        Net::HTTP.stub start: res
+        get :index
+      end
+
+      subject {response}
+      it {should be_success}
+      its(:body) {should eq PHANTOM_RESPONSE}
     end
 
   end

@@ -40,7 +40,17 @@ module PhantomRenderer
         end
       end
       response.headers[cfg.request_by_phantom_header] = "true"
-      return res.body
+      Rails.logger("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+      Rails.logger res
+      Rails.logger res.code
+      Rails.logger res.body
+      Rails.logger res.message
+      Rails.logger("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+      if res.code == 200
+        return res.body
+      else
+        return false
+      end
     rescue Timeout::Error => e
       handle_timeout(e, uri)
       return false

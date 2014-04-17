@@ -40,13 +40,7 @@ module PhantomRenderer
         end
       end
       response.headers[cfg.request_by_phantom_header] = "true"
-      Rails.logger("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-      Rails.logger res
-      Rails.logger res.code
-      Rails.logger res.body
-      Rails.logger res.message
-      Rails.logger("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-      if res.code == 200
+      if res.code.to_i == 200
         return res.body
       else
         return false

@@ -34,7 +34,7 @@ describe PhantomRenderer, type: :controller do
   before do
     Rails.cache.clear
     res = double(Net::HTTPResponse)
-    res.stub body: PHANTOM_RESPONSE, code: 200
+    res.stub body: PHANTOM_RESPONSE, code: "200"
     Net::HTTP.stub start: res
   end
 
@@ -166,7 +166,7 @@ describe PhantomRenderer, type: :controller do
     describe "Bad HTTP response handling" do
       before do
         res = double(Net::HTTPResponse)
-        res.stub body: PHANTOM_RESPONSE, code: 502
+        res.stub body: PHANTOM_RESPONSE, code: "502"
         Net::HTTP.stub start: res
         get :index
       end
@@ -179,7 +179,7 @@ describe PhantomRenderer, type: :controller do
     describe "Good HTTP response" do
       before do
         res = double(Net::HTTPResponse)
-        res.stub body: PHANTOM_RESPONSE, code: 200
+        res.stub body: PHANTOM_RESPONSE, code: "200"
         Net::HTTP.stub start: res
         get :index
       end

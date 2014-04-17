@@ -40,7 +40,11 @@ module PhantomRenderer
         end
       end
       response.headers[cfg.request_by_phantom_header] = "true"
-      return res.body
+      if res.code.to_i == 200
+        return res.body
+      else
+        return false
+      end
     rescue Timeout::Error => e
       handle_timeout(e, uri)
       return false

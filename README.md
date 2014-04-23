@@ -68,14 +68,23 @@ production:
 
 ## Usage
 
-phantom_renderer is meant to be used as a rendering engine in your controller.  
-Instead of sending the single-page application you will ask phantom_renderer to
-render the full HTML page for you:  
-```ruby
-class UsersController < ApplicationController
-  include PhantomRenderer
-  def show
-    render_via_phantom
-  end
-end
-```
+1. phantom_renderer is meant to be used as a rendering engine in your controller.  
+   Instead of sending the single-page application you will ask phantom_renderer to
+   render the full HTML page for you:  
+   ```ruby
+   class UsersController < ApplicationController
+     include PhantomRenderer
+     def show
+       render_via_phantom
+     end
+   end
+   ```
+
+2. In your Javascript, when you want phantom_server to return the rendered page,
+   insert the followin snippet:
+
+   ```javascript
+   var readyEvent = document.createEvent("Event");
+   readyEvent.initEvent("renderReady", true, true);
+   window.dispatchEvent(readyEvent);
+   ```

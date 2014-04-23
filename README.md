@@ -88,3 +88,22 @@ production:
    readyEvent.initEvent("renderReady", true, true);
    window.dispatchEvent(readyEvent);
    ```
+
+## Caching
+
+phantom_renderer supports caching of full HTML pages returned by phantom_server
+to prevent re-rendering the same pages.  
+In order to cache the returned result just pass a `cache_key` option to the
+`render_via_phantom` statement:
+```ruby
+class UsersController < ApplicationController
+  include PhantomRenderer
+  def show
+    render_via_phantom(cache_key: "User_#{params[:id]}")
+  end
+end
+```
+
+This will save the fully rendered HTML page in `Rails.cache` so that the next
+time this page is requested it will be served from cache and not re-rendered by
+phantom_server.

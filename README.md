@@ -64,7 +64,7 @@ production:
   server_ip: 2.2.2.2
 
 ```
-
+*NOTE*: phantom_server has to have access to the Rails server through the private ip at port unicorn_port so it can receive the single-page HTML.
 
 ## Usage
 

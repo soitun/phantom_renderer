@@ -106,4 +106,6 @@ end
 
 This will save the fully rendered HTML page in `Rails.cache` so that the next
 time this page is requested it will be served from cache and not re-rendered by
-phantom_server.
+phantom_server.  
+If the phantom_server did not render the page well or returned a response
+different than HTTP 200 the page won't be cached.

@@ -81,7 +81,7 @@ production:
    ```
 
 2. In your Javascript, when you want phantom_server to return the rendered page,
-   insert the followin snippet:
+   insert the following snippet:
 
    ```javascript
    var readyEvent = document.createEvent("Event");

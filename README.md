@@ -1,4 +1,5 @@
 # PhantomRenderer
+[![Coverage Status](https://coveralls.io/repos/FTBpro/phantom_renderer/badge.png)](https://coveralls.io/r/FTBpro/phantom_renderer)
 ![Build Status](https://api.travis-ci.org/FTBpro/phantom_renderer.png?branch=master "Build Status")
 
 phantom_renderer is a ruby-gem meant to work with Rails applications to render
